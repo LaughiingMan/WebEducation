@@ -1,7 +1,9 @@
 package com.diser.controller;
 
 import com.diser.entity.Comment;
+import com.diser.entity.Views;
 import com.diser.service.CommentService;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +22,7 @@ public class CommentController {
     }
 
     @PostMapping
+    @JsonView(Views.FullComment.class)
     public Comment create(
             @RequestBody Comment comment
     ) {

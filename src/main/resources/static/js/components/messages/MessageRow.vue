@@ -1,7 +1,6 @@
 <template>
     <v-card class="my-2">
         <v-card-text>
-            <i>{{ message.id }}</i>
             {{ message.text }}
         </v-card-text>
         <media v-if="message.link" :message="message"></media>

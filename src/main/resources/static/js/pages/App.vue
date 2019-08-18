@@ -20,7 +20,12 @@
 
     export default {
         methods: {
-            ...mapMutations(['addMessageMutation', 'updateMessageMutation', 'removeMessageMutation']),
+            ...mapMutations([
+                'addMessageMutation',
+                'updateMessageMutation',
+                'removeMessageMutation',
+                'addCommentMutation'
+            ]),
             showProfile() {
                 this.$router.push('/profile')
             }
@@ -40,6 +45,12 @@
                             break
                         default:
                             console.error('Xz che za Event "${data.eventType}"')
+                    }
+                } else if (data.objectType === 'COMMENT') {
+                    switch(data.eventType) {
+                        case 'CREATE':
+                            this.addCommentMutation(data.body)
+                            break
                     }
                 } else {
                     console.error('Xz che za Object "${data.objectType}"')
