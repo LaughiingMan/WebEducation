@@ -1,0 +1,12 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Gradle
+.gradle
+/build/
+
+# Node_modules
+/node_modules/
